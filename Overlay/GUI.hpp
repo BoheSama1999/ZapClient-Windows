@@ -3018,11 +3018,11 @@ struct Menu
 		ModalWindowDimBg = ImVec4(0.19f, 0.17f, 0.54f, 0.50f);
 
 		ImGuiStyle& style = ImGui::GetStyle();
-		//style.SliderThickness = 0.2f;
-		//style.SliderContrast = 0.5f;
-		//style.SliderValuePos = ImVec2(0.5f, 0.5f); not exist
-		style.FramePadding = ImVec2(4.0f, 12.0f); // 改变滑动条的厚度
-		style.GrabMinSize = 20.0f;                // 改变滑动条抓取手柄的尺寸
+		style.SliderThickness = 0.2f;
+		style.SliderContrast = 0.5f;
+		style.SliderValuePos = ImVec2(0.5f, 0.5f);
+		//style.FramePadding = ImVec2(4.0f, 12.0f); // 改变滑动条的厚度
+		//style.GrabMinSize = 20.0f;                // 改变滑动条抓取手柄的尺寸
 		style.WindowPadding = ImVec2(0.000000f, 0.000000f);
 		style.FramePadding = ImVec2(0.000000f, 3.000000f);
 		style.ItemSpacing = ImVec2(8.000000f, 4.000000f);

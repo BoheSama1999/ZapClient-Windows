@@ -21,8 +21,8 @@
 #include "GUI.hpp"
 
 // Name changed :(
-#define ComboBox Combo
-#define MainSliderFloat SliderFloat
+//#define ComboBox Combo
+//#define MainSliderFloat SliderFloat
 
 struct AdvancedGUI
 {
