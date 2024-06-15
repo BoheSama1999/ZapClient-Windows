@@ -28,7 +28,7 @@ namespace Config
 {
 	namespace Settings
 	{
-		int MenuBind = 45;
+		int MenuBind = 53;
 		bool ESPEnabled = true;
 		bool DeadCheck = false;
 		bool OverlayEnabled = true;
