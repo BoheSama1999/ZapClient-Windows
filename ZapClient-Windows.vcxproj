@@ -146,20 +146,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="imgui\backends\imgui_impl_dx10.cpp" />
-    <ClCompile Include="imgui\backends\imgui_impl_dx11.cpp" />
-    <ClCompile Include="imgui\backends\imgui_impl_dx12.cpp" />
-    <ClCompile Include="imgui\backends\imgui_impl_dx9.cpp" />
-    <ClCompile Include="imgui\backends\imgui_impl_glfw.cpp" />
-    <ClCompile Include="imgui\backends\imgui_impl_opengl2.cpp" />
-    <ClCompile Include="imgui\backends\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="imgui\backends\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
-    <ClCompile Include="imgui\imgui_demo.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
-    <ClCompile Include="imgui\misc\cpp\imgui_stdlib.cpp" />
     <ClCompile Include="Overlay\FontAwesome.cpp" />
     <ClCompile Include="zap.cpp" />
   </ItemGroup>
@@ -178,23 +170,16 @@
     <ClInclude Include="Features\Ragebot.hpp" />
     <ClInclude Include="Features\Sense.hpp" />
     <ClInclude Include="Features\Triggerbot.hpp" />
-    <ClInclude Include="imgui\backends\imgui_impl_dx10.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_dx11.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_dx12.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_dx9.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_glfw.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_opengl2.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_opengl3.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_opengl3_loader.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_win32.h" />
+    <ClInclude Include="imgui\color.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="imgui\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="imgui\imgui_internal.h" />
     <ClInclude Include="imgui\imstb_rectpack.h" />
     <ClInclude Include="imgui\imstb_textedit.h" />
     <ClInclude Include="imgui\imstb_truetype.h" />
-    <ClInclude Include="imgui\misc\cpp\imgui_stdlib.h" />
-    <ClInclude Include="imgui\misc\single_file\imgui_single_file.h" />
     <ClInclude Include="Math\FloatVector2D.hpp" />
     <ClInclude Include="Math\FloatVector3D.hpp" />
     <ClInclude Include="Math\Matrix.hpp" />
@@ -234,22 +219,6 @@
     <None Include="Configs\Premade_Recording.ini" />
     <None Include="Configs\Premade_Triggerbot.ini" />
     <None Include="Configs\Premade_VisualsOnly.ini" />
-    <None Include="imgui\backends\vulkan\generate_spv.sh" />
-    <None Include="imgui\backends\vulkan\glsl_shader.frag" />
-    <None Include="imgui\backends\vulkan\glsl_shader.vert" />
-    <None Include="imgui\misc\debuggers\imgui.gdb" />
-    <None Include="imgui\misc\debuggers\imgui.natstepfilter" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="imgui\misc\fonts\Cousine-Regular.ttf" />
-    <Font Include="imgui\misc\fonts\DroidSans.ttf" />
-    <Font Include="imgui\misc\fonts\Karla-Regular.ttf" />
-    <Font Include="imgui\misc\fonts\ProggyClean.ttf" />
-    <Font Include="imgui\misc\fonts\ProggyTiny.ttf" />
-    <Font Include="imgui\misc\fonts\Roboto-Medium.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Natvis Include="imgui\misc\debuggers\imgui.natvis" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
