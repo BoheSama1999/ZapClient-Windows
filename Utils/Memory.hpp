@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -23,7 +23,7 @@ ULONG GetPID() {
 
     if (!ApexPid || ApexPid > 0xfffff) {
             
-        	std::cout << "pid δ�ҵ� " << std::endl;
+        	std::cout << "pid 未找到 " << std::endl;
             std::cout << "pid =" << ApexPid << std::endl;
             std::cout << "status =" << status << std::endl;
             return 0;
