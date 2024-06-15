@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 * 
 *		This is Kernel driver api to use the Driver
 *		You should rewrite here for ur own driver works
@@ -10,41 +10,41 @@
 #include <string>
 #include <iostream>
 
-// ³õÊ¼»¯Çý¶¯ 	·µ»Øtrue ³É¹¦ false Ê§°Ü  
+// åˆå§‹åŒ–é©±åŠ¨ 	è¿”å›žtrue æˆåŠŸ false å¤±è´¥  
 EXTERN_C typedef BOOL(WINAPI* pInitDriver)(std::string key);
-// ¶ÁÄÚ´æ		ºóÃæµÄ¶¼ÊÇ·µ»Ø 0 ³É¹¦ ÆäËûÖµÊ§°Ü
+// è¯»å†…å­˜		åŽé¢çš„éƒ½æ˜¯è¿”å›ž 0 æˆåŠŸ å…¶ä»–å€¼å¤±è´¥
 EXTERN_C typedef ULONG(WINAPI* pReadProcessMemory)(ULONG pid, ULONG64 address, PVOID buffer, ULONG size);
-// Ð´ÄÚ´æ
+// å†™å†…å­˜
 EXTERN_C typedef ULONG(WINAPI* pWriteProcessMemory)(ULONG pid, ULONG64 address, PVOID buffer, ULONG size);
-// »ñÈ¡½ø³ÌÄ£¿éÐÅÏ¢
+// èŽ·å–è¿›ç¨‹æ¨¡å—ä¿¡æ¯
 EXTERN_C typedef ULONG(WINAPI* pGetProcessModule)(ULONG pid, PCHAR buffer, ULONG64& modulebase, ULONG& modulesize);
-// Î±×°½ø³Ì		²ÎÊý1 ×Ô¼ºpid ²ÎÊý2 Î±×°µÄÄÇ¸ö½ø³ÌµÄpid
+// ä¼ªè£…è¿›ç¨‹		å‚æ•°1 è‡ªå·±pid å‚æ•°2 ä¼ªè£…çš„é‚£ä¸ªè¿›ç¨‹çš„pid
 EXTERN_C typedef ULONG(WINAPI* pPakeProcess)(ULONG pid, ULONG fakePid);
-// ±£»¤½ø³Ì		²ÎÊý1 ÈÎÒâ½ø³Ìpid ²ÎÊý2 true ±£»¤ false È¥µô±£»¤
+// ä¿æŠ¤è¿›ç¨‹		å‚æ•°1 ä»»æ„è¿›ç¨‹pid å‚æ•°2 true ä¿æŠ¤ false åŽ»æŽ‰ä¿æŠ¤
 EXTERN_C typedef ULONG(WINAPI* pProtectProcess)(ULONG pid, BOOL isProctect);
-// ±£»¤´°¿Ú
+// ä¿æŠ¤çª—å£
 EXTERN_C typedef ULONG(WINAPI* pProtectWindow)(ULONG hwnd);
-// ·´½ØÍ¼
+// åæˆªå›¾
 EXTERN_C typedef ULONG(WINAPI* pAntiSnapshot)(ULONG hwnd);
-// dllÎÞÄ£¿é×¢Èë  ²ÎÊý1 ±»×¢ÈëµÄ½ø³Ìpid  ²ÎÊý2 dll¾ø¶ÔÂ·¾¶ ²ÎÊý3 0 ´´½¨Ïß³Ì 1 ½Ù³ÖÏß³Ì  2 ²åAPC  ²ÎÊý4 ÊÇ·ñÇåÀíºÛ¼£ ÓÐ0.5ÃëÑÓ³Ù
+// dllæ— æ¨¡å—æ³¨å…¥  å‚æ•°1 è¢«æ³¨å…¥çš„è¿›ç¨‹pid  å‚æ•°2 dllç»å¯¹è·¯å¾„ å‚æ•°3 0 åˆ›å»ºçº¿ç¨‹ 1 åŠ«æŒçº¿ç¨‹  2 æ’APC  å‚æ•°4 æ˜¯å¦æ¸…ç†ç—•è¿¹ æœ‰0.5ç§’å»¶è¿Ÿ
 EXTERN_C typedef ULONG(WINAPI* pDllInject)(ULONG pid, PCHAR dllpath, UCHAR type, bool isClean);
-// ÎÞ¸½¼ÓÉêÇëÄÚ´æ ²ÎÊý1 ÒªÉêÇëÄÚ´æµÄ½ø³Ìpid  ²ÎÊý2 ·ÖÅä¶àÉÙ×Ö½Ú  ²ÎÊý3 ½ÓÊÕÉêÇëµ½µÄÄÚ´æµØÖ· ²ÎÊý4 0 ÎÞ¸½¼ÓÉêÇëÄÚ´æ  1 »ñÈ¡ÉêÇëµ½µÄÄÚ´æµØÖ·(ÅäºÏ0Ê¹ÓÃ) 3 ÄÚºËÉêÇëÒþ²ØÄÚ´æ
+// æ— é™„åŠ ç”³è¯·å†…å­˜ å‚æ•°1 è¦ç”³è¯·å†…å­˜çš„è¿›ç¨‹pid  å‚æ•°2 åˆ†é…å¤šå°‘å­—èŠ‚  å‚æ•°3 æŽ¥æ”¶ç”³è¯·åˆ°çš„å†…å­˜åœ°å€ å‚æ•°4 0 æ— é™„åŠ ç”³è¯·å†…å­˜  1 èŽ·å–ç”³è¯·åˆ°çš„å†…å­˜åœ°å€(é…åˆ0ä½¿ç”¨) 3 å†…æ ¸ç”³è¯·éšè—å†…å­˜
 EXTERN_C typedef ULONG(WINAPI* pGetAllocateProcessMem)(ULONG pid, ULONG memSize, PULONG64 AllocatedAddr, BOOL type);
-// pe×ªshellcode×¢Èë ÎÞÀ­Éì ÐèÌáÇ°×ÔÐÐÀ­Éìpe ²ÎÊý3 0 ´´½¨Ïß³Ì  1 ½Ù³ÖÏß³Ì  2 APCÆô¶¯  ²ÎÊý4 ÊÇ·ñÇåÀíºÛ¼£ ÓÐ0.5ÃëÑÓ³Ù Æµ·±µ÷ÓÃ²»ÓÃÇåÀí ¿ÉÒÔµ±Ô¶³ÌcallÊ¹ÓÃ
+// peè½¬shellcodeæ³¨å…¥ æ— æ‹‰ä¼¸ éœ€æå‰è‡ªè¡Œæ‹‰ä¼¸pe å‚æ•°3 0 åˆ›å»ºçº¿ç¨‹  1 åŠ«æŒçº¿ç¨‹  2 APCå¯åŠ¨  å‚æ•°4 æ˜¯å¦æ¸…ç†ç—•è¿¹ æœ‰0.5ç§’å»¶è¿Ÿ é¢‘ç¹è°ƒç”¨ä¸ç”¨æ¸…ç† å¯ä»¥å½“è¿œç¨‹callä½¿ç”¨
 EXTERN_C typedef ULONG(WINAPI* pPEShellocdeInject)(ULONG pid, PCHAR dllFilePath, UCHAR type, bool isClean);
-// ÄÚºËËÑÌØÕ÷Âë	¿´Àý×Ó FeatureCodes(pid, "Ä£¿éÃû", "\x00\x00\x00\x00","xxxx", &addr); //½ÓÊÕËÑµ½µÄµØÖ·
+// å†…æ ¸æœç‰¹å¾ç 	çœ‹ä¾‹å­ FeatureCodes(pid, "æ¨¡å—å", "\x00\x00\x00\x00","xxxx", &addr); //æŽ¥æ”¶æœåˆ°çš„åœ°å€
 EXTERN_C typedef ULONG(WINAPI* pFeatureCodes)(ULONG pid, PCHAR moduleName, const char* pattern, const char* mask, PULONG64 addr);
-// Ä£ÄâÊó±êÒÆ¶¯		²ÎÊý3 0 Ïà¶ÔÒÆ¶¯ 1¾ø¶ÔÒÆ¶¯
+// æ¨¡æ‹Ÿé¼ æ ‡ç§»åŠ¨		å‚æ•°3 0 ç›¸å¯¹ç§»åŠ¨ 1ç»å¯¹ç§»åŠ¨
 EXTERN_C typedef ULONG(WINAPI* pMouseMove)(ULONG dx, ULONG dy, USHORT Flags);
-// Ä£Äâ¼üÅÌ°´¼ü
+// æ¨¡æ‹Ÿé”®ç›˜æŒ‰é”®
 EXTERN_C typedef ULONG(WINAPI* pKeyboardButton)(USHORT VirtualKey, USHORT Flags);
-// Ä£ÄâÊó±êµã»÷
+// æ¨¡æ‹Ÿé¼ æ ‡ç‚¹å‡»
 EXTERN_C typedef ULONG(WINAPI* pMouseRughtButton)(USHORT Flags);
-// Ç¿É¾ÎÄ¼þ 
+// å¼ºåˆ æ–‡ä»¶ 
 EXTERN_C typedef ULONG(WINAPI* pForceDeleteFile)(PWCHAR filepath);
-// ±´Èû¶û×ÔÃé
+// è´å¡žå°”è‡ªçž„
 EXTERN_C typedef ULONG(WINAPI* pBezierMov)(float x, float y, ULONG w, ULONG h, float speed);
-// »ñÈ¡cr3  ²ÎÊý2 ½ÓÊÕcr3  ²ÎÊý3  0 ½âÃÜ»ñÈ¡  1 ³£¹æ»ñÈ¡
+// èŽ·å–cr3  å‚æ•°2 æŽ¥æ”¶cr3  å‚æ•°3  0 è§£å¯†èŽ·å–  1 å¸¸è§„èŽ·å–
 EXTERN_C typedef ULONG(WINAPI* pGetCr3Bypass)(ULONG pid, PULONG64 dir_base, ULONG type);
 
 pInitDriver gInitDriver = 0;

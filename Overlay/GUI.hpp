@@ -1,4 +1,4 @@
-// Externals
+ï»¿// Externals
 #pragma once
 #include <chrono>
 #include <cstddef>
@@ -3021,8 +3021,8 @@ struct Menu
 		style.SliderThickness = 0.2f;
 		style.SliderContrast = 0.5f;
 		style.SliderValuePos = ImVec2(0.5f, 0.5f);
-		//style.FramePadding = ImVec2(4.0f, 12.0f); // ¸Ä±ä»¬¶¯ÌõµÄºñ¶È
-		//style.GrabMinSize = 20.0f;                // ¸Ä±ä»¬¶¯Ìõ×¥È¡ÊÖ±úµÄ³ß´ç
+		//style.FramePadding = ImVec2(4.0f, 12.0f); // æ”¹å˜æ»‘åŠ¨æ¡çš„åšåº¦
+		//style.GrabMinSize = 20.0f;                // æ”¹å˜æ»‘åŠ¨æ¡æŠ“å–æ‰‹æŸ„çš„å°ºå¯¸
 		style.WindowPadding = ImVec2(0.000000f, 0.000000f);
 		style.FramePadding = ImVec2(0.000000f, 3.000000f);
 		style.ItemSpacing = ImVec2(8.000000f, 4.000000f);

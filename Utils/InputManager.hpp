@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -255,14 +255,14 @@ public:
     }
 
     static bool isKeyPress(InputKeyType key) {
-        static std::unordered_map<int, bool> keyState; // ¼ÇÂ¼°´¼ü×´Ì¬
+        static std::unordered_map<int, bool> keyState; // è®°å½•æŒ‰é”®çŠ¶æ€
 
-        bool isDown = GetAsyncKeyState(static_cast<int>(key)-8) & 0x8000; // »ñÈ¡µ±Ç°°´¼ü×´Ì¬
-        bool wasDown = keyState[static_cast<int>(key)]; // »ñÈ¡ÉÏ´ÎµÄ°´¼ü×´Ì¬
+        bool isDown = GetAsyncKeyState(static_cast<int>(key)-8) & 0x8000; // è·å–å½“å‰æŒ‰é”®çŠ¶æ€
+        bool wasDown = keyState[static_cast<int>(key)]; // è·å–ä¸Šæ¬¡çš„æŒ‰é”®çŠ¶æ€
 
-        keyState[static_cast<int>(key)] = isDown; // ¸üĞÂ°´¼ü×´Ì¬
+        keyState[static_cast<int>(key)] = isDown; // æ›´æ–°æŒ‰é”®çŠ¶æ€
 
-        return isDown && !wasDown; // ¼ì²éÊÇ·ñ°´ÏÂ
+        return isDown && !wasDown; // æ£€æŸ¥æ˜¯å¦æŒ‰ä¸‹
     }
 
     static bool isKeyUp(InputKeyType key) {
