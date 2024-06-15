@@ -258,13 +258,13 @@ struct Glow
     }*/
 
     // Old Glow & Item Glow
-    void SetGlowState(long HighlightSettingsPointer, long HighlightSize, int HighlightID, GlowMode NewGlowMode) {
+    void SetGlowState(ULONG64 HighlightSettingsPointer, long HighlightSize, int HighlightID, GlowMode NewGlowMode) {
         const GlowMode oldGlowMode = Memory::Read<GlowMode>(HighlightSettingsPointer + (HighlightSize * HighlightID) + 0);
         if (NewGlowMode != oldGlowMode)
             Memory::Write<GlowMode>(HighlightSettingsPointer + (HighlightSize * HighlightID) + 0, NewGlowMode);
     }
 
-    void SetColorState(long HighlightSettingsPointer, long HighlightSize, int HighlightID, Color NewColor) {
+    void SetColorState(ULONG64 HighlightSettingsPointer, long HighlightSize, int HighlightID, Color NewColor) {
         const Color oldColor = Memory::Read<Color>(HighlightSettingsPointer + (HighlightSize * HighlightID) + 4);
         if (oldColor != NewColor)
             Memory::Write<Color>(HighlightSettingsPointer + (HighlightSize * HighlightID) + 4, NewColor);
@@ -272,11 +272,11 @@ struct Glow
 
     // New Glow
     void setGlowEnable(Player* Target, int glowEnable) {
-        long ptrLong = Target->BasePointer + OFF_GLOW_ENABLE;
+        ULONG64 ptrLong = Target->BasePointer + OFF_GLOW_ENABLE;
         Memory::Write<int>(ptrLong, glowEnable);
     }
     void setGlowThroughWall(Player* Target, int glowThroughWall) {
-        long ptrLong = Target->BasePointer + OFF_GLOW_THROUGH_WALL;
+        ULONG64 ptrLong = Target->BasePointer + OFF_GLOW_THROUGH_WALL;
         Memory::Write<int>(ptrLong, glowThroughWall);
     }
     int getGlowThroughWall(Player* Target) {
@@ -295,7 +295,7 @@ struct Glow
     void setCustomGlow(Player* Target, bool isVisible, bool isKnocked, bool isSameTeam, bool GlowEnabled) {
         if (GlowEnabled) {
             static const int contextId = 0; // 
-            long basePointer = Target->BasePointer;
+            ULONG64 basePointer = Target->BasePointer;
             int settingIndex = 65;
 
             // Glow
@@ -497,7 +497,7 @@ struct Glow
             }
 
             Memory::Write<unsigned char>(Target->BasePointer + OFF_GLOW_HIGHLIGHT_ID + contextId, settingIndex);
-            long highlightSettingsPtr = Memory::Read<long>(OFF_REGION + OFF_GLOW_HIGHLIGHTS);
+            ULONG64 highlightSettingsPtr = Memory::Read<ULONG64>(OFF_REGION + OFF_GLOW_HIGHLIGHTS);
             if (!isSameTeam) {
                 Memory::Write<decltype(highlightFunctionBits)>(highlightSettingsPtr + OFF_HIGHLIGHT_TYPE_SIZE * settingIndex + 0, highlightFunctionBits);
                 Memory::Write<decltype(glowColorRGB)>(highlightSettingsPtr + OFF_HIGHLIGHT_TYPE_SIZE * settingIndex + 4, glowColorRGB);
@@ -525,8 +525,8 @@ struct Glow
         if (!Map->IsPlayable)
             return;
 
-        const long HighlightSettingsPointer = Memory::Read<long>(OFF_REGION + OFF_GLOW_HIGHLIGHTS);
-        const long HighlightSize = OFF_HIGHLIGHT_TYPE_SIZE;
+        const ULONG64 HighlightSettingsPointer = Memory::Read<ULONG64>(OFF_REGION + OFF_GLOW_HIGHLIGHTS);
+        const ULONG64 HighlightSize = OFF_HIGHLIGHT_TYPE_SIZE;
         const GlowMode NewGlowMode = {
             ItemGlowInsideFunction,                  // Inside Glow
             ItemGlowOutlineFunction,                 // Outline (Border)

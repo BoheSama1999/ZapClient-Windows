@@ -13,7 +13,7 @@
 #define M_PI       3.14159265358979323846
 
 struct LocalPlayer {
-    long BasePointer;
+    ULONG64 BasePointer;
 
     bool IsDead;
     bool IsInAttack;
@@ -35,7 +35,7 @@ struct LocalPlayer {
     float WeaponProjectileSpeed;
     float WeaponProjectileScale;
     bool IsHoldingGrenade;
-    long WeaponEntity;
+    ULONG64 WeaponEntity;
     bool weaponDiscarded;
 
     float ZoomFOV;
@@ -51,7 +51,7 @@ struct LocalPlayer {
     FloatVector2D punchAnglesDiff;
 
     void Read() {
-        BasePointer = Memory::Read<long>(OFF_REGION + OFF_LOCAL_PLAYER);
+        BasePointer = Memory::Read<ULONG64>(OFF_REGION + OFF_LOCAL_PLAYER);
         if (BasePointer == 0)
             return;
 
@@ -82,9 +82,9 @@ struct LocalPlayer {
         punchAnglesPrev = punchAngles;
 
         if (!IsDead && !IsKnocked) {
-            long WeaponHandle = Memory::Read<long>(BasePointer + OFF_WEAPON_HANDLE);
-            long WeaponHandleMasked = WeaponHandle & 0xffff;
-            WeaponEntity = Memory::Read<long>(OFF_REGION + OFF_ENTITY_LIST + (WeaponHandleMasked << 5));
+            ULONG64 WeaponHandle = Memory::Read<ULONG64>(BasePointer + OFF_WEAPON_HANDLE);
+            ULONG64 WeaponHandleMasked = WeaponHandle & 0xffff;
+            WeaponEntity = Memory::Read<ULONG64>(OFF_REGION + OFF_ENTITY_LIST + (WeaponHandleMasked << 5));
 
             int OffHandWeaponID = Memory::Read<int>(BasePointer + OFF_OFFHAND_WEAPON);
             IsHoldingGrenade = OffHandWeaponID == -251 ? true : false;
@@ -131,7 +131,7 @@ struct LocalPlayer {
     }
 
     void setYaw(float angle) {
-        long ptrLong = BasePointer + OFF_VIEW_ANGLES + sizeof(float);
+        ULONG64 ptrLong = BasePointer + OFF_VIEW_ANGLES + sizeof(float);
         Memory::Write<float>(ptrLong, angle);
     }
 

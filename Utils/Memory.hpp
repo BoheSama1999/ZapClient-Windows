@@ -31,7 +31,7 @@ ULONG GetPID() {
     return ApexPid;
 }
 
-bool IsValidPointer(long Pointer) {
+bool IsValidPointer(ULONG64 Pointer) {
     return Pointer > 0x00010000 && Pointer < 0x7FFFFFFEFFFF;
 }
 

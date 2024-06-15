@@ -24,7 +24,7 @@ struct Player {
     LocalPlayer* Myself;
 
     int Index;
-    long BasePointer;
+    ULONG64 BasePointer;
 
     std::string Name;
     int Team;
@@ -58,7 +58,7 @@ struct Player {
 
     int WeaponIndex;
     bool IsHoldingGrenade;
-    long WeaponEntity;
+    ULONG64 WeaponEntity;
 
     float DistanceToLocalPlayer;
     float Distance2DToLocalPlayer;
@@ -142,7 +142,7 @@ struct Player {
     }
 
     void Read() {
-        BasePointer = Memory::Read<long>(OFF_REGION + OFF_ENTITY_LIST + ((Index + 1) << 5));
+        BasePointer = Memory::Read<ULONG64>(OFF_REGION + OFF_ENTITY_LIST + ((Index + 1) << 5));
         if (BasePointer == 0)
             return;
 
@@ -169,9 +169,9 @@ struct Player {
         MaxShield = Memory::Read<int>(BasePointer + OFF_MAXSHIELD);
 
         if (!IsDead && !IsKnocked && IsHostile) {
-            long WeaponHandle = Memory::Read<long>(BasePointer + OFF_WEAPON_HANDLE);
-            long WeaponHandleMasked = WeaponHandle & 0xffff;
-            WeaponEntity = Memory::Read<long>(OFF_REGION + OFF_ENTITY_LIST + (WeaponHandleMasked << 5));
+            ULONG64 WeaponHandle = Memory::Read<ULONG64>(BasePointer + OFF_WEAPON_HANDLE);
+            ULONG64 WeaponHandleMasked = WeaponHandle & 0xffff;
+            WeaponEntity = Memory::Read<ULONG64>(OFF_REGION + OFF_ENTITY_LIST + (WeaponHandleMasked << 5));
 
             int OffHandWeaponID = Memory::Read<int>(BasePointer + OFF_OFFHAND_WEAPON);
             IsHoldingGrenade = OffHandWeaponID == -251 ? true : false;
@@ -266,11 +266,11 @@ struct Player {
 
     // Bones //
     int GetBoneFromHitbox(HitboxType HitBox) const {
-        long ModelPointer = Memory::Read<long>(BasePointer + OFF_STUDIOHDR);
+        ULONG64 ModelPointer = Memory::Read<ULONG64>(BasePointer + OFF_STUDIOHDR);
         if (!Memory::IsValidPointer(ModelPointer))
             return -1;
 
-        long StudioHDR = Memory::Read<long>(ModelPointer + 0x8);
+        ULONG64 StudioHDR = Memory::Read<ULONG64>(ModelPointer + 0x8);
         if (!Memory::IsValidPointer(StudioHDR + 0x34))
             return -1;
 
@@ -295,7 +295,7 @@ struct Player {
         if (Bone < 0 || Bone > 255)
             return LocalOrigin.Add(Offset);
 
-        long BonePtr = Memory::Read<long>(BasePointer + OFF_BONES);
+        ULONG64 BonePtr = Memory::Read<ULONG64>(BasePointer + OFF_BONES);
         BonePtr += (Bone * sizeof(Matrix3x4));
         if (!Memory::IsValidPointer(BonePtr))
             return LocalOrigin.Add(Offset);
@@ -485,11 +485,11 @@ struct Player {
     // DEBUG
     // Bones //
     int GetBoneFromHitboxID(int HitBox) const {
-        long ModelPointer = Memory::Read<long>(BasePointer + OFF_STUDIOHDR);
+        ULONG64 ModelPointer = Memory::Read<ULONG64>(BasePointer + OFF_STUDIOHDR);
         if (!Memory::IsValidPointer(ModelPointer))
             return -1;
 
-        long StudioHDR = Memory::Read<long>(ModelPointer + 0x8);
+        ULONG64 StudioHDR = Memory::Read<ULONG64>(ModelPointer + 0x8);
         if (!Memory::IsValidPointer(StudioHDR + 0x34))
             return -1;
 

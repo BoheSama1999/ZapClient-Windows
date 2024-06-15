@@ -179,9 +179,9 @@ struct Misc {
       return;
 
     if (Features::Misc::SkinChanger) {
-      long wephandle = Memory::Read<long>(Myself->BasePointer + OFF_WEAPON_HANDLE);
+      ULONG64 wephandle = Memory::Read<ULONG64>(Myself->BasePointer + OFF_WEAPON_HANDLE);
       wephandle &= 0xffff;
-      long wep_entity = Myself->WeaponEntity;
+      ULONG64 wep_entity = Myself->WeaponEntity;
       std::map<int, int> weaponSkinMap;
       // Light ammo weapons
       weaponSkinMap[WeaponIDs::P2020] = Features::Misc::SkinP2020;

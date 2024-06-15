@@ -21,8 +21,8 @@ struct Camera {
     }
 
     void Update() {
-        long RenderPtr = Memory::Read<long>(OFF_REGION + OFF_VIEWRENDER);
-        long MatrixPtr = Memory::Read<long>(RenderPtr + OFF_VIEWMATRIX);
+        ULONG64 RenderPtr = Memory::Read<ULONG64>(OFF_REGION + OFF_VIEWRENDER);
+        ULONG64 MatrixPtr = Memory::Read<ULONG64>(RenderPtr + OFF_VIEWMATRIX);
         GameViewMatrix = Memory::Read<ViewMatrix>(MatrixPtr);
     }
 
