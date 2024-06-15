@@ -11,7 +11,7 @@
 #include "Driver.hpp"
 namespace fs = std::filesystem;
 
-extern HMODULE hModule;
+//extern HMODULE hModule;
 
 namespace Memory {
 ULONG ApexPid = 0;
@@ -35,45 +35,34 @@ bool IsValidPointer(long Pointer) {
     return Pointer > 0x00010000 && Pointer < 0x7FFFFFFEFFFF;
 }
 
-bool Read(long address, void* pBuff, size_t size) {
+bool Read(ULONG64 address, PVOID pBuff, ULONG size) {
     if (size == 0)
         return false;
     ULONG pid = GetPID();
     if (pid == 0)
-        return 0;
-    if (!gReadProcessMemory(pid, address, pBuff, size)){ // 0 = yes , 1 = failed
-        return true;
-    }
-    else {
         return false;
-    }
+    bool sucess;
+    sucess = (!gReadProcessMemory(pid, address, pBuff, size));
+    return sucess;
 }
 
-bool Write(long address, void* pBuff, size_t size) {
+bool Write(ULONG64 address, void* pBuff, size_t size) {
     if (size == 0)
         return false;
     ULONG pid = GetPID();
-    if (!gWriteProcessMemory(pid, address, pBuff, size)) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return (!gWriteProcessMemory(pid, address, pBuff, size));
 }
 
 template <class T>
-T Read(long Address) {
+T Read(ULONG64 Address) {
     T buffer;
-    bool success;
-    if (Address)
-    success = (!gReadProcessMemory(GetPID(), Address, &buffer, sizeof(T)));
-    if (!success)
-        std::cout << "error when reading" << std::endl;
+    //Read(Address, &buffer, sizeof(buffer));
+    gReadProcessMemory(GetPID(), Address, &buffer, sizeof(T));
     return buffer;
 }
 
 template <class T>
-void Write(long Address, T Value) {
+void Write(ULONG64 Address, T Value) {
     bool success = Write(Address, &Value, sizeof(T));
     //if (!success && Config::Home::ErrorLogging) {
     if (!success) {
@@ -83,7 +72,7 @@ void Write(long Address, T Value) {
     }
 }
 
-std::string ReadString(long address) {
+std::string ReadString(ULONG64 address) {
     const int size = sizeof(std::string);
     char buffer[size] = { 0 };
     bool success = Read(address, &buffer, size);
@@ -92,7 +81,7 @@ std::string ReadString(long address) {
     return std::string(buffer);
 }
 
-std::string ReadStringSize(long address, int size) {
+std::string ReadStringSize(ULONG64 address, int size) {
     //char buffer[size] = { 0 }; idk how it works on linux :( lets fix it on windows
     const int Ssize = sizeof(std::string);
     char buffer[Ssize] = { 0 };

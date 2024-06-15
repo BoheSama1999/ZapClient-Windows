@@ -566,6 +566,9 @@ int main(int argc, char* argv[]) {
     Sleep(50);
     std::cout << "Apex Game Base " << OFF_REGION << std::endl;
     Sleep(50);
+    uint64_t Dtestread;gReadProcessMemory(Memory::GetPID(), OFF_REGION + OFF_GAMEMODE + 0x50 , &Dtestread, sizeof(Dtestread));
+    std::cout << "testing Dread( > 0 = ok): " << Dtestread << std::endl;
+    Sleep(50);
     std::cout << "-----------------------------" << std::endl;
     Sleep(400);
 

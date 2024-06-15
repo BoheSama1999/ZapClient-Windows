@@ -244,20 +244,20 @@ public:
     }*/
 
     static bool isKeyDownOrPress(InputKeyType key) {
-        return GetAsyncKeyState(static_cast<int>(key)) & 0x8000;
+        return GetAsyncKeyState(static_cast<int>(key)-8) & 0x8000;
     }
 
     static bool isKeyDown(InputKeyType key) {  
         //std::cout << "Debug: " << static_cast<int>(key)<< std::endl;
         //std::cout << "Debug: Should:" << static_cast<int>(InputKeyType::KEYBOARD_INSERT) << std::endl;
-        bool isDown = GetAsyncKeyState(static_cast<int>(key)) & 0x8000;
+        bool isDown = GetAsyncKeyState(static_cast<int>(key)-8) & 0x8000;
         return isDown;
     }
 
     static bool isKeyPress(InputKeyType key) {
         static std::unordered_map<int, bool> keyState; // 记录按键状态
 
-        bool isDown = GetAsyncKeyState(static_cast<int>(key)) & 0x8000; // 获取当前按键状态
+        bool isDown = GetAsyncKeyState(static_cast<int>(key)-8) & 0x8000; // 获取当前按键状态
         bool wasDown = keyState[static_cast<int>(key)]; // 获取上次的按键状态
 
         keyState[static_cast<int>(key)] = isDown; // 更新按键状态
