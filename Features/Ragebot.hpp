@@ -23,8 +23,8 @@
 
 // UI //
 #include "../imgui/imgui.h"
-#include "../imgui/backends/imgui_impl_glfw.h"
-#include "../imgui/backends/imgui_impl_opengl3.h"
+#include "../imgui/imgui_impl_glfw.h"
+#include "../imgui/imgui_impl_opengl3.h"
 
 // Conversion
 #define DEG2RAD(x) ((float)(x) * (float)(M_PI / 180.f))
