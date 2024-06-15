@@ -46,7 +46,7 @@ bool Read(ULONG64 address, PVOID pBuff, ULONG size) {
     return sucess;
 }
 
-bool Write(ULONG64 address, void* pBuff, size_t size) {
+bool Write(ULONG64 address, PVOID pBuff, ULONG size) {
     if (size == 0)
         return false;
     ULONG pid = GetPID();
