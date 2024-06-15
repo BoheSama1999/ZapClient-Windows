@@ -3,7 +3,7 @@
 //#include <linux/input.h> linux 
 
 
-#define InputKeyTypeCount 61
+//#define InputKeyTypeCount 61
 
 typedef unsigned char byte;
 typedef unsigned short int ushort;

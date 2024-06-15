@@ -248,7 +248,7 @@ public:
     }
 
     static bool isKeyDown(InputKeyType key) {  
-        std::cout << "Debug: " << static_cast<int>(key)<< std::endl;
+        //std::cout << "Debug: " << static_cast<int>(key)<< std::endl;
         //std::cout << "Debug: Should:" << static_cast<int>(InputKeyType::KEYBOARD_INSERT) << std::endl;
         bool isDown = GetAsyncKeyState(static_cast<int>(key)) & 0x8000;
         return isDown;
