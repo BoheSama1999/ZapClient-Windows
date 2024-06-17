@@ -22,6 +22,6 @@ public:
     }
 
     void MoveMouse(int pitchMovement, int yawMovement) {
-        gMouseMove(pitchMovement, yawMovement, 0); // 0 = relative, 1 = absolute 
+        //gMouseMove(-pitchMovement, -yawMovement, 0); // 0 = relative, 1 = absolute 
     }
 }; 

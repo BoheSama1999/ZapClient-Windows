@@ -229,7 +229,7 @@ void RenderUI() {
         Date << OverlayWindow.currentDateTime(2);
         Time << OverlayWindow.currentDateTime(3);
         Version << CheatVersion;
-        UnknownCheats << "Bata Version Of MiaoMiaoSense:)";
+        UnknownCheats << "Bata Version | Windows:)";
         Spacings << "  |  ";
         std::string combined = TitleText.str() + Spacings.str() + Date.str() + Spacings.str() + Time.str() + Spacings.str() + Version.str() + Spacings.str() + UnknownCheats.str();
         const char* combinedText = combined.c_str();
@@ -499,7 +499,7 @@ int main(int argc, char* argv[]) {
 
     // Driver
     hModule = LoadLibrary(L"DriverDll.dll");
-    std::string Dkey = "BTK3JC15FG3089O502YZ7DP51RI0I52J";
+    std::string Dkey = "TKEZJZCENOG6ODVV27M5981L794H2C6P";
     bool DStatus = DInit(Dkey, hModule);
     if (DStatus) {
         std::cout << "Driver Inited" << std::endl;
@@ -508,6 +508,12 @@ int main(int argc, char* argv[]) {
         std::cout << "Driver Init failed" << std::endl;
         return NULL;
     }
+
+    // Protect Process
+    ULONG currentPid = GetCurrentProcessId();
+    
+    //if (gProtectProcess(currentPid, true))
+    //    return 0;
     
     // Waiting for Apex Legends to be found //
     while (Memory::GetPID() == 0) {
@@ -563,6 +569,8 @@ int main(int argc, char* argv[]) {
     std::cout << "By BoheSama(Windows), Gerosity(Linux)" << std::endl;
     Sleep(50);
     std::cout << "For Game Version " << GameVersion << std::endl;
+    Sleep(50);
+    std::cout << "Cheat PID " << currentPid << std::endl;
     Sleep(50);
     std::cout << "Apex Game Base " << OFF_REGION << std::endl;
     Sleep(50);
