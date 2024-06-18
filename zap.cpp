@@ -512,7 +512,8 @@ int main(int argc, char* argv[]) {
     // Protect Process
     ULONG currentPid = GetCurrentProcessId();
     
-    //if (gProtectProcess(currentPid, true))
+    if (gProtectProcess(currentPid, true))
+        std::cout << "ProtectProcess faild" << std::endl;
     //    return 0;
     
     // Waiting for Apex Legends to be found //
