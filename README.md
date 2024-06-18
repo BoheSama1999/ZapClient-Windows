@@ -9,6 +9,8 @@ Instructions are down below
 
 **Never cheat on a main account, its not worth it**
 
+**This project will be updated along with the game and the main project(zap-client).**
+
 # Information
 
 <details>
