@@ -159,6 +159,8 @@ Instructions are down below
 </details>
 
 # Other Repositories:
+https://github.com/Gerosity/zap-client - Linux Version
+
 https://github.com/Gerosity/zap-client-Read-Only-   - A read memory only version for Linux
 
 # Installation
