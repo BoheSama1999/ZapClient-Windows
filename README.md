@@ -30,6 +30,9 @@ Instructions are down below
 
 <details>
 <summary><b>Changelog</b></summary>
+
+    8.07.24 - Version 1.1.4
+    Updated Offsets To Latest Version (Game Version v3.0.72.12)
     
     01.06.24 - Version 1.1.3
     Legitbot:
