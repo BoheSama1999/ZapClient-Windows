@@ -1,15 +1,15 @@
-# zap-client-Windows [Apex External Cheat For Windows]
+# Zap Client for Windows [Apex External Cheat for Windows]
 **Updated to Game Version v3.0.74.20 (Season 21) (2024-07-03)**
 
-By **BoheSama**(Windows) **Gerosity**(Linux) 
+By **BoheSama** (Windows) and **Gerosity** (Linux)
 
-All credits to original owners
+All credits go to the original owners.
 
-Instructions are down below
+Instructions are provided below.
 
-**Never cheat on a main account, its not worth it**
+**It is not advisable to cheat on your main account as it is not worth the consequences.**
 
-**This project will be updated along with the game and the main project(zap-client).**
+**This project will be regularly updated in line with the game and the main project (zap-client).**
 
 # Information
 
@@ -167,13 +167,13 @@ https://github.com/Gerosity/zap-client - Linux Version
 https://github.com/Gerosity/zap-client-Read-Only-   - A read memory only version for Linux
 
 # Installation
-Driver API on Utils/Driver.hpp,DriverHID.hpp
+Driver API on Utils/Driver.hpp, DriverHID.hpp.
 
-Just build it with Visual Studio (For sure u need have ur own driver to)
+Please build it using Visual Studio. (You will need to have your own driver.)
 
-Finally you should make sure that's a floder named Configs right there by the exe :)
+Finally, ensure that there is a folder named "Configs" located next to the executable file.
 
-**6. Press Insert to toggle the Menu (You can only interact with the Menu and the game when the menu is active).**
+**6.Please press the "Insert" key to toggle the menu. You can only interact with the menu and the game when the menu is active.**
 
 # Credits:
     https://github.com/Gerosity/zap-client - Linux Version
