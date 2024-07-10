@@ -18,6 +18,7 @@ To do list: </br>
     </br>
     2.Make it be a dll version and should be inject into apex with apc injection(then u just need a driver with apc inject or whatever to use it)
     </br>
+    3.A lot of things need to fix >_<
 
 <details>
 <summary><b>Feature List (Outdated)</b></summary>
