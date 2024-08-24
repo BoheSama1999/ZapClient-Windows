@@ -155,7 +155,7 @@ struct Glow
     int ItemGlowInsideFunction = 0;    // Leave
     int ItemGlowOutlineFunction = 138; // Leave
 
-    const std::vector<uint8_t> ItemHighlightID = { 15, 40, 45, 52, 63, 9, 55 }; // Gold, Red, Purple, Blue, Grey, Weapons, Ammo
+    const std::vector<uint8_t> ItemHighlightID = { 15, 42, 47, 54, 65, 9, 58 }; // Gold, Red, Purple, Blue, Grey, Weapons, Ammo
 
     const GlowMode SetGlowOff = { 0, 0, 0, 0 };
 
@@ -296,7 +296,7 @@ struct Glow
         if (GlowEnabled) {
             static const int contextId = 0; // 
             ULONG64 basePointer = Target->BasePointer;
-            int settingIndex = 65;
+            int settingIndex = 63;
 
             // Glow
             int InsideFunction = 2;    // Leave
@@ -369,7 +369,7 @@ struct Glow
                 if (Features::Glow::GlowColorShieldMode == 0) { // Current Shield
                     if (Features::Glow::KnockedCheck) {
                         if (isVisible) {
-                            settingIndex = 65;
+                            settingIndex = 63;
                             glowColorRGB = { Features::Colors::Enemy::VisibleGlowColor[0], Features::Colors::Enemy::VisibleGlowColor[1], Features::Colors::Enemy::VisibleGlowColor[2] }; // Visible Enemies
                         } else if (!isVisible) {
                             if (shield >= 101) { // Red Shield
@@ -392,7 +392,7 @@ struct Glow
                     } else if (!Features::Glow::KnockedCheck) {
                         if (!isKnocked) {
                             if (isVisible) {
-                                settingIndex = 65;
+                                settingIndex = 64;
                                 glowColorRGB = { Features::Colors::Enemy::VisibleGlowColor[0], Features::Colors::Enemy::VisibleGlowColor[1], Features::Colors::Enemy::VisibleGlowColor[2] }; // Visible Enemies
                             } else if (!isVisible) {
                                 if (shield >= 101) { // Red Shield
@@ -422,7 +422,7 @@ struct Glow
                 if (Features::Glow::GlowColorShieldMode == 1) { // Max Shield
                     if (Features::Glow::KnockedCheck) {
                         if (isVisible) {
-                            settingIndex = 65;
+                            settingIndex = 63;
                             glowColorRGB = { Features::Colors::Enemy::VisibleGlowColor[0], Features::Colors::Enemy::VisibleGlowColor[1], Features::Colors::Enemy::VisibleGlowColor[2] }; // Visible Enemies
                         } else if (!isVisible) {
                             if (shield != 0 && maxShield == 125) { // Red Shield
@@ -445,7 +445,7 @@ struct Glow
                     } else if (!Features::Glow::KnockedCheck) {
                         if (!isKnocked) {
                             if (isVisible) {
-                                settingIndex = 65;
+                                settingIndex = 63;
                                 glowColorRGB = { Features::Colors::Enemy::VisibleGlowColor[0], Features::Colors::Enemy::VisibleGlowColor[1], Features::Colors::Enemy::VisibleGlowColor[2] }; // Visible Enemies
                             } else if (!isVisible) {
                                 if (shield != 0 && maxShield == 125) { // Red Shield
@@ -476,7 +476,7 @@ struct Glow
             if (Features::Glow::GlowColorMode == 1) {
                 if (Features::Glow::KnockedCheck) {
                     if (isVisible) {
-                        settingIndex = 65;
+                        settingIndex = 63;
                         glowColorRGB = { Features::Colors::Enemy::VisibleGlowColor[0], Features::Colors::Enemy::VisibleGlowColor[1], Features::Colors::Enemy::VisibleGlowColor[2] }; // Visible Enemies
                     } else if (!isVisible) {
                         settingIndex = 70;
@@ -484,7 +484,7 @@ struct Glow
                     }
                 } else if (!Features::Glow::KnockedCheck) {
                     if (!isKnocked && isVisible) {
-                        settingIndex = 65;
+                        settingIndex = 63;
                         glowColorRGB = { Features::Colors::Enemy::VisibleGlowColor[0], Features::Colors::Enemy::VisibleGlowColor[1], Features::Colors::Enemy::VisibleGlowColor[2] }; // Visible Enemies
                     } else if (!isKnocked && !isVisible) {
                         settingIndex = 66;
