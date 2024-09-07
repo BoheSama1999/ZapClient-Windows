@@ -1,5 +1,5 @@
 # Zap Client for Windows [Apex External Cheat for Windows]
-**Updated to Game Version v3.0.76.22 (Season 22) (2024.08.06)**
+**Updated to Game Version v3.0.79.44 (Season 22) (2024.09.01)**
 
 By **BoheSama** (Windows) and **Gerosity** (Linux)
 
