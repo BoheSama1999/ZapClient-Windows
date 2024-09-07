@@ -167,9 +167,6 @@ To do list: </br>
 <details>
 <summary><b>Video Previews</b></summary>
 
-**Showcase - Semirage:**
-
-[![Showcase - Semirage](https://img.youtube.com/vi/54ov7SLJ1P8/0.jpg)](https://www.youtube.com/watch?v=54ov7SLJ1P8)
 </details>
 
 # Other Repositories:
