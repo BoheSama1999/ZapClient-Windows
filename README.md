@@ -17,15 +17,15 @@ To do list: </br>
     I may not have time to maintain the project because of my studies, but I will try to make time to update offsets and fix bugs
     
     1.A lot of things need to fix >_<
-    </br>
+    
     2.API and Lua/script System
         Users can use Lua scripts to call built-in APIs or nested API libraries to perform features that are not built-in by default,
         And may later change some features to Lua scripts to be loaded on demand to extend stability and richness as well as performance.
-    </br>
+    
     3.Using engine render (big challenge) 
-    </br>
+    
     4.Make it be a dll version and should be inject into apex with apc injection(then u just need a driver with apc inject or whatever to use it)
-    </br>
+    
 
 <details>
 <summary><b>Feature List (Outdated)</b></summary>
