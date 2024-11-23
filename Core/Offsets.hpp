@@ -1,36 +1,36 @@
 #pragma once
 #include <string>
 // https://www.unknowncheats.me/forum/apex-legends/319804-apex-legends-reversal-structs-offsets.html
-// GameVersion = v3.0.79.44
+// GameVersion = null 
  
-std::string CheatVersion = "Version 1.1.4";
-std::string GameVersion = "v3.0.79.44"; // [Miscellaneous]->GameVersion
+std::string CheatVersion = "Version 1.2.0";
+std::string GameVersion = "null"; // [Miscellaneous]->GameVersion
 
 // Core
 constexpr ULONG64 OFF_REGION = 0x140000000; // [Static]->Region
-constexpr ULONG64 OFF_LEVEL = 0x17ec544; // [Miscellaneous]->LevelName
-constexpr ULONG64 OFF_LOCAL_PLAYER = 0x23e91f8; // [Miscellaneous]->LocalPlayer
-constexpr ULONG64 OFF_ENTITY_LIST = 0x1f15f88; // [Miscellaneous]->cl_entitylist
-constexpr ULONG64 OFF_NAME_INDEX = 0x38; // NameIndex
-constexpr ULONG64 OFF_NAME_LIST = 0xd388450; // [Miscellaneous]->NameList
-constexpr ULONG64 OFF_GAMEMODE = 0x02421250; // [ConVars]->mp_gamemode
+constexpr ULONG64 OFF_LEVEL = 0x18ECF84; // [Miscellaneous]->LevelName
+constexpr ULONG64 OFF_LOCAL_PLAYER = 0x24F6288; // [Miscellaneous]->LocalPlayer
+constexpr ULONG64 OFF_ENTITY_LIST = 0x2022BF8; // [Miscellaneous]->cl_entitylist
+constexpr ULONG64 OFF_NAME_INDEX = 0x0481; // NameIndex
+constexpr ULONG64 OFF_NAME_LIST = 0xd506390; // [Miscellaneous]->NameList
+constexpr ULONG64 OFF_GAMEMODE = 0x252e380 + 0x50; // [ConVars]->mp_gamemode
 constexpr ULONG64 OFF_SQUAD_ID = 0x0344; // [RecvTable.DT_BaseEntity]->m_squadID
-constexpr ULONG64 OFF_GLOBAL_VARS = 0x17ec040; // [Miscellaneous]->GlobalVars
+constexpr ULONG64 OFF_GLOBAL_VARS = 0x18eca70; // [Miscellaneous]->GlobalVars
 
 // HUD
-constexpr ULONG64 OFF_VIEWRENDER = 0x769b558; // [Miscellaneous]->ViewRender
-constexpr ULONG64 OFF_VIEWMATRIX = 0x11a350; // [Miscellaneous]->ViewMatrix
+constexpr ULONG64 OFF_VIEWRENDER = 0x77BD448; // [Miscellaneous]->ViewRender
+constexpr ULONG64 OFF_VIEWMATRIX = 0x11A350; // [Miscellaneous]->ViewMatrix
 
 // Buttons
-constexpr ULONG64 OFF_INATTACK = 0x0769b658; // [Buttons]->in_attack
-constexpr ULONG64 OFF_IN_JUMP = 0x0769b778; // [Buttons]->in_jump
-constexpr ULONG64 OFF_IN_DUCK = 0x0769b868; // [Buttons]->in_duck
-constexpr ULONG64 OFF_IN_FORWARD = 0x0769b5a8; // [Buttons]->in_forward
-constexpr ULONG64 OFF_IN_BACKWARD = 0x0769b5d0; // [Buttons]->in_backward
+constexpr ULONG64 OFF_INATTACK = 0x77BFD60; // [Buttons]->in_attack
+constexpr ULONG64 OFF_IN_JUMP = 0x77BFE60; // [Buttons]->in_jump
+constexpr ULONG64 OFF_IN_DUCK = 0x077bff50; // [Buttons]->in_duck
+constexpr ULONG64 OFF_IN_FORWARD = 0x077bfc90; // [Buttons]->in_forward
+constexpr ULONG64 OFF_IN_BACKWARD = 0x077bfcb8; // [Buttons]->in_backward
 constexpr ULONG64 OFF_TRAVERSAL_START_TIME = 0x2b70; // [RecvTable.DT_LocalPlayerExclusive]->m_traversalStartTime
 constexpr ULONG64 OFF_TRAVERSAL_PROGRESS = 0x2b6c; // [RecvTable.DT_LocalPlayerExclusive]->m_traversalProgress
-constexpr ULONG64 OFF_WALL_RUN_START_TIME = 0x3614; // [RecvTable.DT_LocalPlayerExclusive]->m_wallRunStartTime
-constexpr ULONG64 OFF_WALL_RUN_CLEAR_TIME = 0x3618; // [RecvTable.DT_LocalPlayerExclusive]->m_wallRunClearTime
+constexpr ULONG64 OFF_WALL_RUN_START_TIME = 0x367c; // [RecvTable.DT_LocalPlayerExclusive]->m_wallRunStartTime
+constexpr ULONG64 OFF_WALL_RUN_CLEAR_TIME = 0x3680; // [RecvTable.DT_LocalPlayerExclusive]->m_wallRunClearTime
 
 // Player
 constexpr ULONG64 OFF_HEALTH = 0x0328; // [RecvTable.DT_Player]->m_iHealth
@@ -62,14 +62,14 @@ constexpr ULONG64 OFF_GRAPPLE = 0x2cc0; // [RecvTable.DT_Player].m_grapple
 constexpr ULONG64 OFF_GRAPPLE_ATTACHED = 0x2d50; // [RecvTable.DT_Player]->m_grappleActive
 
 // Weapon
-constexpr ULONG64 OFF_WEAPON_HANDLE = 0x1944; // [RecvTable.DT_Player]->m_latestPrimaryWeapons
-constexpr ULONG64 OFF_WEAPON_INDEX = 0x1788; // [RecvTable.DT_WeaponX]->m_weaponNameIndex
+constexpr ULONG64 OFF_WEAPON_HANDLE = 0x1934; // [RecvTable.DT_Player]->m_latestPrimaryWeapons
+constexpr ULONG64 OFF_WEAPON_INDEX = 0x1778; // [RecvTable.DT_WeaponX]->m_weaponNameIndex
 constexpr ULONG64 OFF_PROJECTILESCALE = 0x04f4 + 0x19d8; // [WeaponSettings]->projectile_gravity_scale + 0x8
 constexpr ULONG64 OFF_PROJECTILESPEED = 0x04ec + 0x19d8; // [WeaponSettings]->projectile_launch_speed
-constexpr ULONG64 OFF_OFFHAND_WEAPON = 0x1954; // [RecvTable.DT_BaseCombatCharacter]->m_latestNonOffhandWeapons
+constexpr ULONG64 OFF_OFFHAND_WEAPON = 0x1944; // [RecvTable.DT_BaseCombatCharacter]->m_latestNonOffhandWeapons
 constexpr ULONG64 OFF_CURRENTZOOMFOV = 0x15e0 + 0x00b8; // [RecvTable.DT_WeaponX]->m_playerData + [RecvTable.DT_WeaponPlayerData]->m_curZoomFOV
 constexpr ULONG64 OFF_TARGETZOOMFOV = 0x15e0 + 0x00bc; // [RecvTable.DT_WeaponX]->m_playerData + [RecvTable.DT_WeaponPlayerData]->m_targetZoomFOV
-constexpr ULONG64 OFF_SKIN = 0x0d68; // [DataMap.C_BaseAnimating]->m_nSkin
+constexpr ULONG64 OFF_SKIN = 0x0d60; // [DataMap.C_BaseAnimating]->m_nSkin
 constexpr ULONG64 OFF_TIME_BASE = 0x2088; // [DataMap.C_Player]->m_currentFramePlayer.timeBase
 constexpr ULONG64 OFF_WEAPON_DISCARDED = 0x15a9; // [RecvTable.DT_WeaponX]->m_discarded
 constexpr ULONG64 OFF_VIEWMODELS = 0x2d98; // [RecvTable.DT_Player]->m_hViewModels
@@ -79,10 +79,10 @@ constexpr ULONG64 OFF_NEXT_READY_TIME = 0x1568; // [DataMap.CWeaponX]->m_nextRea
 // Glow
 constexpr ULONG64 OFF_HIGHLIGHT_TYPE_SIZE = 0x34;
 constexpr ULONG64 OFF_GLOW_THROUGH_WALL = 0x26c; //[DT_HighlightSettings].?
-constexpr ULONG64 OFF_GLOW_FIX = 0x278;
+constexpr ULONG64 OFF_GLOW_FIX = 0x268;
 constexpr ULONG64 OFF_GLOW_HIGHLIGHT_ID = 0x29C; //[DT_HighlightSettings].m_highlightServerActiveStates
-constexpr ULONG64 OFF_GLOW_HIGHLIGHTS = 0xb13c6a0; // [Miscellaneous]->HighlightSettings
-constexpr ULONG64 OFF_GLOW_ENABLE = 0x26c; //
+constexpr ULONG64 OFF_GLOW_HIGHLIGHTS = 0xB2AD380; // [Miscellaneous]->HighlightSettings
+constexpr ULONG64 OFF_GLOW_ENABLE = 0x28C; //
 
 // Item
-constexpr ULONG64 OFF_CUSTOM_SCRIPT_INT = 0x1568; // [RecvTable.DT_PropSurvival]->m_customScriptInt
+constexpr ULONG64 OFF_CUSTOM_SCRIPT_INT = 0x1558; // [RecvTable.DT_PropSurvival]->m_customScriptInt
