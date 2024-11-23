@@ -6,47 +6,47 @@
 namespace WeaponIDs {
     //Weapon Ids
     //Light
-    int P2020 = 112;
-    int RE45 = 85;
-    int ALTERNATOR = 84;
-    int R301 = 0;
-    int SPITFIRE = 113;
-    int G7 = 95;
+    int P2020 = 139;
+    int RE45 = 206;
+    int ALTERNATOR = 75;
+    int R301 = 136;
+    int SPITFIRE = 126;
+    int G7 = 65;
      
     //Heavy
-    int FLATLINE = 94;
-    int HEMLOCK = 96;
-    int PROWLER = 107;
-    int REPEATER = 118;
-    int RAMPAGE = 6;
-    int CAR = 119;
+    int FLATLINE = 47;
+    int HEMLOCK = 56;
+    int PROWLER = 95;
+    int REPEATER = 222;
+    int RAMPAGE = 240;
+    int CAR = 245;
      
     //Energy
-    int HAVOC = 91;
-    int LSTAR = 99;
-    int TRIPLETAKE = 114;
-    int VOLT = 117;
-    int NEMESIS = 120;
+    int HAVOC = 28;
+    int LSTAR = 10;
+    int TRIPLETAKE = 38;
+    int VOLT = 106;
+    int NEMESIS = 229;
      
     //Shotgun
-    int MOZAMBIQUE = 102;
-    int EVA8 = 92;
-    int PEACEKEEPER = 109;
-    int MASTIFF = 101;
+    int MOZAMBIQUE = 165;
+    int EVA8 = 146;
+    int PEACEKEEPER = 155;
+    int MASTIFF = 3;
      
     //Sniper
-    int WINGMAN = 115;
-    int LONGBOW = 90;
-    int CHARGE_RIFLE = 87;
-    int SENTINEL = 1;
+    int WINGMAN = 182;
+    int LONGBOW = 111;
+    int CHARGE_RIFLE = 121;
+    int SENTINEL = 215;
      
     //Legendary
-    int R99 = 111;
-    int DEVOTION = 89;
-    int BOCEK = 2;
-    int KRABER = 98;
-    int KNIFE = 176;
+    int R99 = 85;
+    int DEVOTION = 29;
+    int BOCEK = 2; //nope
+    int KRABER = 1;
+    int KNIFE = 176; //nope
      
     //Melee
-    int HANDS = 121;
+    int HANDS = 145;
 };
